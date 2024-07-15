@@ -1,0 +1,465 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+@font-face {
+  font-family: Thunder;
+  src: url(../public/fonts/Thunder-BlackHC.otf);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
+/********** Header Main Section CSS Start *********/
+
+
+header.header_main {
+  position: absolute;
+  padding: 24px 0px 24px 0px;
+  width: 100%;
+}
+
+.header_nav ul {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+
+.header_nav ul li {
+  list-style: none;
+}
+
+
+.header_nav ul li a {
+  text-decoration-line: none;
+  color: var(--700, #310904);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-transform: capitalize;
+}
+
+
+.header_end {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  gap: 8px;
+}
+
+.header_end .header_light_btn {
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  color: #310904;
+  text-decoration-line: none;
+  border-radius: 8px;
+  border: 1px solid var(--700, #310904);
+  padding: 16px 24px;
+  transition: all .6s ease;
+}
+
+.header_end .header_light_btn:hover {
+  background: var(--Black, #141414);
+  color: #fff;
+}
+
+
+
+
+
+.header_end .header_dark_btn {
+  color: var(--Black, #141414);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: none;
+  border-radius: 8px;
+  background: var(--Black, #141414);
+  color: #fff;
+  padding: 16px 32px;
+  transition: all .6s ease;
+  border: 1px solid #141414;
+}
+
+.header_end .header_dark_btn:hover {
+  background: transparent;
+  color: #310904;
+}
+
+header.header_main {
+  padding: 24px 0px 24px 0px;
+}
+
+.header_nav {
+  padding: 7px 0px 0px 0px;
+}
+
+
+/********** Header Main Section CSS End *********/
+
+
+
+
+
+/********** We are Music Partner Section CSS Start *********/
+
+.first_banner_sec {
+  background: url(../src/Components/img/first_banner_img.png) no-repeat top center;
+  padding: 100px 0px;
+}
+
+
+.first_banner_txt {
+  padding: 100px 0px 0px 0px;
+  text-align: center;
+}
+
+
+.first_banner_txt h2 {
+  color: #141414;
+  text-align: center;
+  font-family: 'DM Sans';
+  font-size: 102px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 93px;
+  text-transform: uppercase;
+}
+
+
+
+.first_banner_txt p {
+  color: var(--Black, #141414);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  padding: 0px 0px 44px 0px;
+}
+
+.first_banner_txt a {
+  border-radius: 8px;
+  background: var(--Black, #141414);
+  padding: 12px 32px;
+  text-decoration-line: none;
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 50px;
+}
+
+
+
+.selection_box ul li .checkbox-container {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+}
+
+.selection_box ul li .custom-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.selection_box ul li .checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.selection_box ul li .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.selection_box ul li .custom-checkbox:checked~.checkmark {
+  background-color: #23F0C7;
+  box-shadow: 0 3px 7px rgba(33, 150, 243, 0.3);
+}
+
+.selection_box ul li.custom-checkbox:checked~.checkmark:after {
+  display: block;
+}
+
+@keyframes checkAnim {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: 10px;
+  }
+}
+
+.selection_box ul li .custom-checkbox:checked~.checkmark:after {
+  animation: checkAnim 0.2s forwards;
+}
+
+
+.selection_box ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.selection_box ul li {
+  list-style: none;
+  color: var(--Black, #141414);
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+
+
+.selection_box {
+  padding: 80px 0px 0px 0px;
+}
+
+
+
+/********** We are Music Partner Section CSS End *********/
+
+
+
+
+/********** Excellence Noticed Section CSS Start *********/
+
+
+.noticed_excellence_sec {
+  background: #141414;
+  border-radius: 20px;
+  padding: 0px 0px 129px 0px;
+  margin: 0px 0px 56px 0px;
+  filter: drop-shadow(0px -4px 16px rgba(142, 141, 208, 0.16));
+}
+
+
+.noticed_excellence_txt {
+  padding: 328px 140px;
+  border-radius: 20px;
+}
+
+.noticed_excellence_txt h3 {
+  color: var(--Grey, #CBCBCB);
+  font-family: 'DM Sans';
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100px;
+}
+
+
+
+/********** Excellence Noticed Section CSS End *********/
+
+
+
+/********** Upload Your Tracks Section CSS Start *********/
+
+
+.upload_your_tracks {
+  padding: 295px 0px;
+  border-radius: 30px;
+  border: 1px solid var(--White, #FFF);
+  background: rgba(240, 240, 240, 0.40);
+  margin: 0px 20px 57px 20px;
+}
+
+.upload_your_track_txt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 100%;
+  justify-content: center;
+}
+
+.upload_your_track_txt h6 {
+  color: var(--Black, #141414);
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 8px;
+  background: var(--Light-Green, #C8FFF4);
+  padding: 8px;
+  display: inline-block;
+}
+
+.upload_your_track_txt h3 {
+  color: var(--Black, #141414);
+  font-family: 'DM Sans';
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 64px; 
+  text-transform: capitalize;
+}
+
+.upload_your_track_txt h3 {
+  color: var(--Black, #141414);
+  font-family: 'DM Sans';
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 64px; 
+  text-transform: capitalize;
+}
+
+.upload_your_track_txt p {
+  color: var(--Black, #141414);
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0px;
+  padding: 0px 0px 24px 0px;
+}
+
+.feedback_checkbox ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.feedback_checkbox ul li {
+  list-style: none;
+  color: var(--Black, #141414);
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+
+.retain_ownership_sec {
+  padding: 266px 0px 0px 0px;
+}
+
+.retain_owner_txt h2 {
+  background: linear-gradient(101deg, #E62E05 23.86%, #97180C 42.35%, #57130A 62.23%, #141414 79.06%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: 'DM Sans';
+  font-size: 116px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 90px;
+}
+
+.retain_owner_txt {
+  text-align: center;
+}
+
+
+.video-container {
+  width: 100%;
+  position: relative;
+}
+
+.video-container video {
+  width: 100%;
+}
+
+.video-container button {
+  position: absolute;
+  top: 50%;
+  z-index: 99;
+  left: 50%;
+}
+
+/********** Upload Your Tracks Section CSS End *********/
+
+
+
+/********** Retain Owner Music Section CSS Start *********/
+
+
+.marquee-container {
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  width: 100%;
+  background-color: #f0f0f0; 
+  padding: 10px 0;
+}
+
+.marquee-container .marquee {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-container .marquee .logo {
+  display: inline-block;
+  height: 50px; 
+  margin-right: 20px; 
+}
+
+
+/********** Retain Owner Music Section CSS End *********/
