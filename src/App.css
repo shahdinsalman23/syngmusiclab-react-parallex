@@ -128,6 +128,9 @@ header.header_main {
 .first_banner_sec {
   background: url(../src/Components/img/first_banner_img.png) no-repeat top center;
   padding: 100px 0px;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
 }
 
 
@@ -173,6 +176,13 @@ header.header_main {
   font-style: normal;
   font-weight: 500;
   line-height: 50px;
+  transition: all .6s ease;
+  border: 1px solid var(--Black, #141414);
+}
+
+.first_banner_txt a:hover {
+  background: transparent;
+  color: var(--Black, #141414);
 }
 
 
