@@ -24,6 +24,14 @@ ul {
 
 
 
+body {
+  background: url(../src/Components/img/Home.jpg) no-repeat top center;
+  background-size: cover;
+  width: 100%;
+  height: auto;
+}
+
+
 /********** Header Main Section CSS Start *********/
 
 
@@ -420,6 +428,7 @@ header.header_main {
   background: var(--Light-Green, #C8FFF4);
   padding: 8px;
   display: inline-block;
+  margin: 0px 0px 24px 0px;
 }
 
 
@@ -431,6 +440,7 @@ header.header_main {
   font-weight: 500;
   line-height: 64px; 
   text-transform: capitalize;
+  margin: 0px 0px 24px 0px;
 }
 
 .upload_your_track_txt p {

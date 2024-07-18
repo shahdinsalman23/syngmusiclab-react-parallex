@@ -12,7 +12,7 @@ import PlanCardSec from './Components/PlansCardSec/PlanCardSec.jsx';
 import FaqsSec from './Components/FaqsSec/FaqsSec.jsx';
 import GotAQuestion from './Components/GotAQuestion/GotAQuestion.jsx';
 import { Parallax } from 'react-parallax';
-
+import HomeBg from "../src/Components/img/Home.jpg"
 
 
 function App() {
@@ -20,16 +20,13 @@ function App() {
     <>
       <Header />
       <WeAreMusicPartner />
-      <Parallax>
-        <ExcellenceNoticed />
-      </Parallax>
+      <ExcellenceNoticed />
       <UploadYourTracks />
       <GetExpectFeedback/>
       <GetCertifFiedRecognized/>
       <RetainOwnership/>
       <PlanCardSec/>
       <FaqsSec/>
-    
     </>
   );
 }

@@ -1,7 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect  } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const WeAreMusicPartner = () => {
+
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
 
   const [checkedItems, setCheckedItems] = useState({
     trackFeedback: true,
@@ -20,6 +26,7 @@ const WeAreMusicPartner = () => {
   return (
     <>
 
+
       <section className="first_banner_sec">
         <Container>
           <Row className='justify-content-center'>
@@ -33,20 +40,20 @@ const WeAreMusicPartner = () => {
             <Col lg={12}>
               <div className="selection_box">
                 <ul>
-                  <li>
-                  <input type="checkbox" class="ui-checkbox" />
+                  <li data-aos="fade-up"  data-aos-delay="00">
+                    <input type="checkbox" className="ui-checkbox" />
                     Track feedback
                   </li>
-                  <li>
-                  <input type="checkbox" class="ui-checkbox"/>
+                  <li data-aos="fade-up"  data-aos-delay="300">
+                    <input type="checkbox" className="ui-checkbox" />
                     Sync certification
                   </li>
-                  <li>
-                  <input type="checkbox" class="ui-checkbox"/>
+                  <li data-aos="fade-up"  data-aos-delay="500">
+                    <input type="checkbox" className="ui-checkbox" />
                     Distribution to networks
                   </li>
-                  <li>
-                  <input type="checkbox" class="ui-checkbox"/>
+                  <li data-aos="fade-up"  data-aos-delay="700">
+                    <input type="checkbox" className="ui-checkbox" />
                     Career strategy collaboration
                   </li>
                 </ul>

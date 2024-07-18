@@ -2,9 +2,11 @@ import React from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import Typewriter from 'react-typewriter-effect';
 import MusicVideo from '../MusicVideo/MusicVideo';
+import { Parallax } from 'react-parallax';
 
 const NoticedExcellenceSection = () => {
   return (
+
     <section className="noticed_excellence_sec">
       <Container>
         <Row>
@@ -34,6 +36,8 @@ const NoticedExcellenceSection = () => {
         </Row>
       </Container>
     </section>
+
+
   );
 };
 
