@@ -398,8 +398,15 @@ header.header_main {
 }
 
 
+
+/********** Upload Your Tracks Section CSS End *********/
+
+
+
+/********** Retain Owner Music Section CSS Start *********/
+
 .retain_ownership_sec {
-  padding: 266px 0px 0px 0px;
+  padding: 266px 0px 60px 0px;
 }
 
 .retain_owner_txt h2 {
@@ -435,11 +442,6 @@ header.header_main {
   left: 50%;
 }
 
-/********** Upload Your Tracks Section CSS End *********/
-
-
-
-/********** Retain Owner Music Section CSS Start *********/
 
 
 .marquee-container {
@@ -447,13 +449,13 @@ header.header_main {
   white-space: nowrap;
   position: relative;
   width: 100%;
-  background-color: #f0f0f0; 
   padding: 10px 0;
 }
 
 .marquee-container .marquee {
   display: inline-block;
-  animation: marquee 15s linear infinite;
+  animation: marquee 20s linear infinite;
+  width: 100%;
 }
 
 @keyframes marquee {
@@ -467,9 +469,28 @@ header.header_main {
 
 .marquee-container .marquee .logo {
   display: inline-block;
-  height: 50px; 
-  margin-right: 20px; 
+  height: 50px;
+  margin-right: 100px;
+}
+
+.retain_owner_txt p {
+  padding: 0px 0px 72px 0px;
 }
 
 
 /********** Retain Owner Music Section CSS End *********/
+
+
+
+
+/********** Faqs Section CSS Start *********/
+
+.faqs_sec {
+  background: #141414;
+  padding: 91px 0px 50px 0px;
+  border-radius: 50px 50px 0px 0px;
+}
+
+
+
+/********** Faqs Section CSS End *********/

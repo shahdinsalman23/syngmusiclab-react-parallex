@@ -9,6 +9,8 @@ import UploadYourTracks from './Components/UploadYourTracks/UploadYourTracks.jsx
 import GetExpectFeedback from './Components/GetExpectFeedback/GetExpectFeedback.jsx';
 import GetCertifFiedRecognized from './Components/GetCertifFiedRecognized/GetCertifFiedRecognized.jsx';
 import RetainOwnership from './Components/RetainOwnership/RetainOwnership.jsx';
+import PlanCardSec from './Components/PlansCardSec/PlanCardSec.jsx';
+import FaqsSec from './Components/FaqsSec/FaqsSec.jsx';
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
       <GetExpectFeedback/>
       <GetCertifFiedRecognized/>
       <RetainOwnership/>
+      <PlanCardSec/>
+      <FaqsSec/>
     </>
   );
 }

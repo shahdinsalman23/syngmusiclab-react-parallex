@@ -1,15 +1,25 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import LogoMarque from '../LogoMarque/LogoMarque'
+import pngwing from "../img/pngwing_img.png"
+import netflix from "../img/blacknetflix.png"
+import universal from "../img/NBCU_Careers_Logo_Purple.png"
+import FXnetwork from '../img/pngegg.png'
+import blackhulu from "../img/blackhulu.png"
+import paramount from "../img/blackparamount.png"
+import amazonstudio from "../img/AMZN_STUDIOS.png"
 
 const RetainOwnership = () => {
 
 
     const logos = [
-        '', 
-        '',
-        '',
-        '',
+        pngwing, 
+        netflix,
+        universal,
+        FXnetwork,
+        blackhulu,
+        paramount,
+        amazonstudio
       ];
 
 
