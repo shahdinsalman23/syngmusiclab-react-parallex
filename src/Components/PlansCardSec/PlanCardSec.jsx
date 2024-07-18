@@ -30,8 +30,8 @@ const PlanCardSec = () => {
         },
         {
           title: 'Sync Partner',
-          price: 299,
-          originalPrice: 399,
+          price: 399,
+          originalPrice: "$299",
           features: [
             '20 tracks/month',
             'SML and expert critiques',
@@ -49,19 +49,27 @@ const PlanCardSec = () => {
     <>
         <section className="right_plan_sec">
             <Container>
-                <Row>
+                <Row className='justify-content-center'>
                     <Col lg={8}>
                         <div className="right_plan_txt">
                             <h4>We’ve got the right plan for you.</h4>
-
+                        </div>
+                        <div className="monthly_card_txt">
+                          <p>Monthly</p>
+                          <label class="switch">
+                            <input type="checkbox" />
+                            <span class="slider round"></span>
+                          </label>
+                          <p>Yearly</p>
+                          <span>.</span>
+                          <p>Save 20% over monthly</p>
                         </div>
                     </Col>
                 </Row>
                 <Row className="justify-content-center">
-                    <h2 className="text-center mb-5">We've got the right plan for you.</h2>
                     {plans.map((plan, index) => (
                         <Col key={index} lg={4} className="mb-4">
-                        <PricingCard {...plan} />
+                        <PricingCard {...plan }  index={index}/>
                         </Col>
                     ))}
                 </Row>

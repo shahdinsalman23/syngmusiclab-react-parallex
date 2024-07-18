@@ -6,11 +6,6 @@ const PlanCard = () => {
     <section className="plan_card_sec">
         <Container>
             <Row>
-                <Col lg={12}>
-                    <div className="monthly_year_txt">
-                        <h3>We’ve got the right plan for you.</h3>
-                    </div>
-                </Col>
                 <Col lg={4}>
                     <div className="plan_card_box">
                         <div className="plan_card_txt">

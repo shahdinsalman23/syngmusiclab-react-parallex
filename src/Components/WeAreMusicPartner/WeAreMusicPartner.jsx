@@ -34,55 +34,19 @@ const WeAreMusicPartner = () => {
               <div className="selection_box">
                 <ul>
                   <li>
-                    <label className="checkbox-container">
-                      <input
-                        className="custom-checkbox"
-                        type="checkbox"
-                        name="trackFeedback"
-                        checked={checkedItems.trackFeedback}
-                        onChange={handleCheckboxChange}
-                      />
-                      <span className="checkmark"></span>
-                    </label>
+                  <input type="checkbox" class="ui-checkbox" />
                     Track feedback
                   </li>
                   <li>
-                    <label className="checkbox-container">
-                      <input
-                        className="custom-checkbox"
-                        type="checkbox"
-                        name="syncCertification"
-                        checked={checkedItems.syncCertification}
-                        onChange={handleCheckboxChange}
-                      />
-                      <span className="checkmark"></span>
-                    </label>
+                  <input type="checkbox" class="ui-checkbox"/>
                     Sync certification
                   </li>
                   <li>
-                    <label className="checkbox-container">
-                      <input
-                        className="custom-checkbox"
-                        type="checkbox"
-                        name="distributionToNetworks"
-                        checked={checkedItems.distributionToNetworks}
-                        onChange={handleCheckboxChange}
-                      />
-                      <span className="checkmark"></span>
-                    </label>
+                  <input type="checkbox" class="ui-checkbox"/>
                     Distribution to networks
                   </li>
                   <li>
-                    <label className="checkbox-container">
-                      <input
-                        className="custom-checkbox"
-                        type="checkbox"
-                        name="careerStrategyCollaboration"
-                        checked={checkedItems.careerStrategyCollaboration}
-                        onChange={handleCheckboxChange}
-                      />
-                      <span className="checkmark"></span>
-                    </label>
+                  <input type="checkbox" class="ui-checkbox"/>
                     Career strategy collaboration
                   </li>
                 </ul>

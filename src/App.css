@@ -2,8 +2,13 @@
 
 
 @font-face {
-  font-family: Thunder;
-  src: url(../public/fonts/Thunder-BlackHC.otf);
+  font-family: "Thunder";
+  src: url(../public/fonts/Thunder-BoldLC.otf);
+}
+
+@font-face {
+  font-family: "Thunderlight";
+  src: url(../public/fonts/Thunder-LightLC.ttf);
 }
 
 * {
@@ -127,7 +132,7 @@ header.header_main {
 
 .first_banner_sec {
   background: url(../src/Components/img/first_banner_img.png) no-repeat top center;
-  padding: 100px 0px;
+  padding: 125px 0px 109px 0px;
   background-size: cover;
   width: 100%;
   height: 100%;
@@ -135,7 +140,7 @@ header.header_main {
 
 
 .first_banner_txt {
-  padding: 100px 0px 0px 0px;
+  padding: 102px 0px 0px 0px;
   text-align: center;
 }
 
@@ -143,11 +148,11 @@ header.header_main {
 .first_banner_txt h2 {
   color: #141414;
   text-align: center;
-  font-family: 'DM Sans';
-  font-size: 102px;
+  font-family: Thunder;
+  font-size: 172px;
   font-style: normal;
   font-weight: 600;
-  line-height: 93px;
+  line-height: 143px; 
   text-transform: uppercase;
 }
 
@@ -157,11 +162,12 @@ header.header_main {
   color: var(--Black, #141414);
   text-align: center;
   font-family: "DM Sans";
-  font-size: 20px;
+  font-size: 24px;
   font-style: normal;
   font-weight: 500;
-  line-height: 28px;
-  padding: 0px 0px 44px 0px;
+  line-height: 33.6px; 
+  padding: 0px 0px 32px 0px;
+  margin: 0px;
 }
 
 .first_banner_txt a {
@@ -186,72 +192,114 @@ header.header_main {
 }
 
 
+/* checkbox settings 👇 */
 
-.selection_box ul li .checkbox-container {
-  display: inline-block;
+.ui-checkbox {
+  --primary-color: #23F0C7;
+  --secondary-color: #fff;
+  --primary-hover-color: #23F0C7;
+  /* checkbox */
+  --checkbox-diameter: 20px;
+  --checkbox-border-radius: 5px;
+  --checkbox-border-color: #d9d9d9;
+  --checkbox-border-width: 1px;
+  --checkbox-border-style: solid;
+  /* checkmark */
+  --checkmark-size: 1.2;
+}
+
+.ui-checkbox, 
+.ui-checkbox *, 
+.ui-checkbox *::before, 
+.ui-checkbox *::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.ui-checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--checkbox-diameter);
+  height: var(--checkbox-diameter);
+  border-radius: var(--checkbox-border-radius);
+  background: var(--secondary-color);
+  border: var(--checkbox-border-width) var(--checkbox-border-style) var(--checkbox-border-color);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  cursor: pointer;
   position: relative;
-  padding-left: 35px;
-  margin-bottom: 20px;
-  cursor: pointer;
-  font-size: 16px;
-  user-select: none;
+  width: 25px;
+  height: 25px;
+  box-shadow: 0px 4px 4px 0px rgba(142, 141, 208, 0.16);
 }
 
-.selection_box ul li .custom-checkbox {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.selection_box ul li .checkmark {
+.ui-checkbox::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  right: 0;
+  bottom: 0;
+  -webkit-box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+  box-shadow: 0 0 0 calc(var(--checkbox-diameter) / 2.5) var(--primary-color);
+  border-radius: inherit;
+  opacity: 0;
+  -webkit-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  -o-transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
+  transition: all 0.5s cubic-bezier(0.12, 0.4, 0.29, 1.46);
 }
 
-.selection_box ul li .checkmark:after {
+.ui-checkbox::before {
+  top: 40%;
+  left: 50%;
   content: "";
   position: absolute;
-  display: none;
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  transform: rotate(45deg);
+  width: 8px;
+  height: 14px;
+  border-right: 2px solid var(--secondary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  -ms-transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  transform: translate(-50%, -50%) rotate(45deg) scale(0);
+  opacity: 0;
+  -webkit-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+  -o-transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
+  transition: all 0.1s cubic-bezier(0.71, -0.46, 0.88, 0.6),opacity 0.1s;
 }
 
-.selection_box ul li .custom-checkbox:checked~.checkmark {
-  background-color: #23F0C7;
-  box-shadow: 0 3px 7px rgba(33, 150, 243, 0.3);
+/* actions */
+
+.ui-checkbox:hover {
+  border-color: var(--primary-color);
 }
 
-.selection_box ul li.custom-checkbox:checked~.checkmark:after {
-  display: block;
+.ui-checkbox:checked {
+  background: var(--primary-color);
+  border-color: transparent;
 }
 
-@keyframes checkAnim {
-  0% {
-    height: 0;
-  }
-
-  100% {
-    height: 10px;
-  }
+.ui-checkbox:checked::before {
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+  -ms-transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+  transform: translate(-50%, -50%) rotate(45deg) scale(var(--checkmark-size));
+  -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  -o-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
 }
 
-.selection_box ul li .custom-checkbox:checked~.checkmark:after {
-  animation: checkAnim 0.2s forwards;
+.ui-checkbox:active:not(:checked)::after {
+  -webkit-transition: none;
+  -o-transition: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  transition: none;
+  opacity: 1;
 }
+
+
 
 
 .selection_box ul {
@@ -270,6 +318,9 @@ header.header_main {
   font-style: normal;
   font-weight: 500;
   line-height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 
@@ -297,19 +348,41 @@ header.header_main {
 
 
 .noticed_excellence_txt {
-  padding: 328px 140px;
+  padding: 259px 140px 259px 140px;
   border-radius: 20px;
+}
+
+.noticed_excellence_txt h1 {
+  color: var(--Grey, #CBCBCB);
+  font-family: "Thunderlight";
+  font-size: 116px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 82%;
 }
 
 .noticed_excellence_txt h3 {
   color: var(--Grey, #CBCBCB);
-  font-family: 'DM Sans';
-  font-size: 100px;
+  font-family: "Thunderlight";
+  font-size: 116px;
   font-style: normal;
   font-weight: 400;
   line-height: 100px;
 }
 
+
+.right_plan_sec .card .card-body h3 h6 {
+  color: var(--100, #FF4405);
+  text-align: right;
+  font-family: "DM Sans";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: absolute;
+  left: 20px;
+  top: 0px;
+}
 
 
 /********** Excellence Noticed Section CSS End *********/
@@ -333,6 +406,7 @@ header.header_main {
   align-items: flex-start;
   height: 100%;
   justify-content: center;
+  padding: 0px 70px 0px 0px;
 }
 
 .upload_your_track_txt h6 {
@@ -348,19 +422,10 @@ header.header_main {
   display: inline-block;
 }
 
-.upload_your_track_txt h3 {
-  color: var(--Black, #141414);
-  font-family: 'DM Sans';
-  font-size: 72px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 64px; 
-  text-transform: capitalize;
-}
 
 .upload_your_track_txt h3 {
   color: var(--Black, #141414);
-  font-family: 'DM Sans';
+  font-family: 'Thunder';
   font-size: 72px;
   font-style: normal;
   font-weight: 500;
@@ -406,7 +471,7 @@ header.header_main {
 /********** Retain Owner Music Section CSS Start *********/
 
 .retain_ownership_sec {
-  padding: 266px 0px 60px 0px;
+  padding: 266px 0px 138px 0px;
 }
 
 .retain_owner_txt h2 {
@@ -414,12 +479,14 @@ header.header_main {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: 'DM Sans';
+  font-family: 'Thunder';
   font-size: 116px;
   font-style: normal;
   font-weight: 600;
-  line-height: 90px;
+  line-height: 80px;
+  padding: 20px 0px 16px 0px;
 }
+
 
 .retain_owner_txt {
   text-align: center;
@@ -429,10 +496,12 @@ header.header_main {
 .video-container {
   width: 100%;
   position: relative;
+  filter: drop-shadow(0px -4px 16px rgba(142, 141, 208, 0.16));
 }
 
 .video-container video {
   width: 100%;
+  border-radius: 8px;
 }
 
 .video-container button {
@@ -474,11 +543,291 @@ header.header_main {
 }
 
 .retain_owner_txt p {
+  color: var(--Black, #141414);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  width: 464px;
   padding: 0px 0px 72px 0px;
+  margin: 0 auto;
+}
+
+section.right_plan_sec .card {
+  height: 571px;
+  border-radius: 8px;
+  background: var(--Light-Grey, #E9EAEC);
+  box-shadow: 0px 4px 4px 0px rgba(142, 141, 208, 0.16);
+  width: 100%;
+  max-width: 100% !important;
+}
+
+.right_plan_sec .list-unstyled {
+  text-align: left;
+}
+
+.right_plan_sec .card .card-body {
+  padding: 32px 24px 32px 24px;
+}
+
+.right_plan_sec .border-danger.card {
+    border-radius: 8px;
+    background: var(--100, #FF4405);
+    box-shadow: 0px 4px 4px 0px rgba(142, 141, 208, 0.16);
+}
+
+.right_plan_sec .card .card-body .card-title.h5 {
+  color: var(--Black, #141414);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 22px; 
+  letter-spacing: -0.4px;
+  text-transform: capitalize;
+  margin: 0px 0px 18px 0px;
+}
+
+
+.right_plan_sec .border-danger.card .card-body .card-title.h5 {
+  color: #fff;
+}
+
+.right_plan_sec .card .card-body h3 {
+  color: var(--Black, #141414);
+  font-family: "DM Sans";
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  position: relative;
+  padding: 0px 0px 44px 0px;
+  margin: 0px !important;
+}
+
+.right_plan_sec .card .card-body h3::before {
+  position: absolute;
+  content: "";
+  background: #fff;
+  width: 80%;
+  height: 1px;
+  left: 50%;
+  bottom: 20px;
+  transform: translate(-50%);
+}
+
+.right_plan_sec .card .card-body h3 span {
+  color: var(--Black, #141414);
+  font-family: "DM Sans";
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 21px;
+}
+
+.right_plan_sec .border-danger.card .card-body h3 {
+  color: #fff;
+}
+
+.right_plan_sec .border-danger.card .card-body h3 span {
+  color: #fff !important;
 }
 
 
 /********** Retain Owner Music Section CSS End *********/
+
+
+
+/********** Plan Card Section CSS Start *********/
+
+.right_plan_txt h4 {
+  color: var(--Black, #141414);
+  font-family: Thunder;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 64px;
+  margin: 0px;
+}
+
+.right_plan_txt {
+  text-align: center;
+  padding: 0px 0px 53px 0px;
+}
+
+
+.right_plan_sec .list-unstyled li {
+  color: var(--Black, #141414);
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 0px 0px 14px 0px;
+  margin: 0px !important;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.right_plan_sec .border-danger.card .card-body ul.list-unstyled li {
+  color: #ffff;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 70px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc !important;
+  transition: .4s;
+  width: auto !important;
+  height: auto !important;
+  border-color: #ccc !important;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #FF4405 !important;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #FF4405;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(33px);
+  -ms-transform: translateX(33px);
+  transform: translateX(33px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.monthly_card_txt {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 0px 0px 50px 0px;
+}
+
+.monthly_card_txt p {
+  color: #000;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130.2%;
+  margin: 0px;
+}
+
+.monthly_card_txt span {
+  border: 1px solid #000;
+  background: #000;
+  height: 6px;
+  width: 6px;
+  border-radius: 10px;
+}
+
+.right_plan_sec {
+  padding: 0px 0px 101px 0px;
+}
+
+
+.noticed_sec_video .video-container button {
+  padding: 18px 25px 20px 25px;
+  border-radius: 50px;
+  border: none;
+  font-size: 20px;
+}
+
+
+.right_plan_sec .border-danger.card .card-body button {
+    border-radius: 8px;
+    background: var(--White, #FFF);
+    color: var(--Black, #141414);
+    text-align: center;
+    font-family: "DM Sans";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 16px 32px;
+    border: 1px solid #fff;
+    transition: all .6s ease;
+}
+
+.right_plan_sec .border-danger.card .card-body button:hover {
+  background: transparent;
+  color: #fff;
+}
+
+.right_plan_sec .card .card-body button {
+  border-radius: 8px;
+  background: var(--Black, #141414);
+  border: 1px solid #141414;
+  padding: 16px 32px;
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  transition: all .6s ease;
+}
+
+.right_plan_sec .card .card-body button:hover {
+  background: transparent;
+  color: #141414;
+}
+
+.right_plan_sec .list-unstyled li input {
+  width: 20px;
+  height: 20px;
+}
+
+
+/********** Plan Card Section CSS End *********/
+
 
 
 
@@ -487,10 +836,323 @@ header.header_main {
 
 .faqs_sec {
   background: #141414;
-  padding: 91px 0px 50px 0px;
-  border-radius: 50px 50px 0px 0px;
+  padding: 91px 0px 32px 0px;
+  border-radius: 50px;
+  margin: 0px 20px;
+}
+
+
+.faqs_head h2 {
+  color: var(--Grey, #CBCBCB);
+  font-family: Thunder;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0px 0px 112px 0px;
+}
+
+
+.faqs_txt .styles_faq-row-wrapper__3vA1D .styles_faq-row__2YF3c {
+  background: #141414;
+  border-bottom: 1px solid #141414;
+}
+
+
+.faqs_txt .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_row-title-text__1MuhU {
+  color: #D9D9D9;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130.2%;
+  padding: 24px 0px;
+}
+
+
+.faqs_txt .styles_faq-row-wrapper__3vA1D {
+    background: transparent;
+}
+
+.faqs_txt .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-content__QOGZd .styles_row-content-text__2sgAB {
+  color: #D9D9D9;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130.2%;
+}
+
+.faqs_txt .styles_faq-row-wrapper__3vA1D .styles_row-body__1NvUo .styles_faq-row__2YF3c .styles_row-title__1YiiY .styles_icon-wrapper__2cftw svg {
+  fill: #fff;
 }
 
 
 
 /********** Faqs Section CSS End *********/
+
+
+/********** Got A Questions Section CSS Start *********/
+
+
+.got_question_sec {
+  background: #141414;
+  padding: 200px 0px 0px 0px
+}
+
+.got_question_txt h4 {
+  color: var(--Grey, #CBCBCB);
+  font-family: Thunder;
+  font-size: 72px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 0px 0px 8px 0px;
+}
+
+.got_question_txt p {
+  color: var(--Grey, #CBCBCB);
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.got_question_txt {
+  padding: 0px 0px 88px 0px;
+}
+
+.got_input_field input {
+  display: block;
+  width: 100%;
+  padding: 16px 0px;
+  border-radius: 8px;
+  background: rgba(203, 203, 203, 0.25);
+  border: none;
+}
+
+
+.got_input_field label {
+  color: var(--Grey, #CBCBCB);
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130.2%;
+  padding: 0px 0px 8px 0px;
+}
+
+.got_input_field {
+  padding: 0px 0px 22px 0px;
+}
+
+.got_input_field textarea {
+  display: block;
+  width: 100%;
+  margin: 8px 0px 0px 0px;
+  border-radius: 8px;
+  background: rgba(203, 203, 203, 0.25);
+  height: 144px;
+  padding: 16px;
+}
+
+
+
+/********** Got A Questions Section CSS End *********/
+
+
+/********** Concept Section CSS Start *********/
+
+
+
+section.concept_sec {
+  padding: 297px 0px 182px 0px;
+}
+
+.concept_txt h2 {
+  color: #CBCBCB;
+  text-align: center;
+  font-family: Thunder;
+  font-size: 172px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 143px; 
+  text-transform: uppercase;
+  margin: 0px;
+}
+
+
+
+/********** Concept Section CSS End *********/
+
+
+/********** Footer Main Section CSS Start *********/
+
+
+
+.footer_logo img {
+  filter: drop-shadow(0px -4px 16px rgba(142, 141, 208, 0.16));
+  width: 84.096px;
+}
+
+.footer_link ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.footer_link ul li {
+  list-style: none;
+  padding: 8px;
+}
+
+
+.footer_link ul li a {
+  color: var(--Grey, #CBCBCB);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  text-decoration-line: none;
+  border-radius: 8px;
+  transition: all .6s ease;
+}
+
+.footer_link ul li a:hover {
+  color: #ff4405;
+}
+
+.footer_flex {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.footer_end {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: end;
+  justify-content: center;
+}
+
+.footer_end a {
+  color: var(--White, #FFF);
+  text-align: center;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  border-radius: 8px;
+  border: 1px solid var(--White, #FFF);
+  text-decoration-line: none;
+  padding: 16px 24px;
+  transition: all .6s ease;
+  width: 179px;
+  margin: 0px 0px 10px 0px;
+}
+
+.footer_end a:hover {
+  background: #fff;
+  color: #141414;
+}
+
+
+/********** Footer Main Section CSS End *********/
+
+
+/********** Mobile header CSS Start *********/
+
+
+.header_mobile {
+  display: none;
+}
+
+.hamburger_icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.3);
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.sidebar.open {
+  left: 0;
+}
+
+.sidebar_content {
+  padding: 20px;
+}
+
+.sidebar_content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar_content ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar_content ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+}
+
+.sidebar_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 999;
+}
+
+.sidebar_overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+/********** Mobile header CSS End *********/
+
+@media (max-width: 991px) {
+  .header_main {
+    display: none;
+  }
+  .header_mobile {
+    display: block;
+    padding: 10px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+  
+}

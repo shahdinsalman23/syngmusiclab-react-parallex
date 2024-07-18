@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { FaPlay, FaPause } from 'react-icons/fa'; // Import play and pause icons
 
 const MusicVideo = ({ src, poster }) => {
   const videoRef = useRef(null);
@@ -24,7 +25,7 @@ const MusicVideo = ({ src, poster }) => {
         controls={false}
       ></video>
       <button onClick={handlePlayPause} className="play-pause-button">
-        {isPlaying ? 'Pause' : 'Play'}
+        {isPlaying ? <FaPause /> : <FaPlay />}
       </button>
     </div>
   );

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './Components/Header/Header';
 import "./../node_modules/bootstrap/dist/css/bootstrap.min.css"
@@ -11,19 +10,26 @@ import GetCertifFiedRecognized from './Components/GetCertifFiedRecognized/GetCer
 import RetainOwnership from './Components/RetainOwnership/RetainOwnership.jsx';
 import PlanCardSec from './Components/PlansCardSec/PlanCardSec.jsx';
 import FaqsSec from './Components/FaqsSec/FaqsSec.jsx';
+import GotAQuestion from './Components/GotAQuestion/GotAQuestion.jsx';
+import { Parallax } from 'react-parallax';
+
+
 
 function App() {
   return (
     <>
       <Header />
       <WeAreMusicPartner />
-      <ExcellenceNoticed />
+      <Parallax>
+        <ExcellenceNoticed />
+      </Parallax>
       <UploadYourTracks />
       <GetExpectFeedback/>
       <GetCertifFiedRecognized/>
       <RetainOwnership/>
       <PlanCardSec/>
       <FaqsSec/>
+    
     </>
   );
 }
