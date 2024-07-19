@@ -21,13 +21,15 @@ const WeAreMusicPartner = () => {
     setCheckedItems({ ...checkedItems, [name]: checked });
   };
 
+  
+
 
 
   return (
     <>
 
 
-      <section className="first_banner_sec">
+      <section className="first_banner_sec" id="weAreMusicPartner">
         <Container>
           <Row className='justify-content-center'>
             < Col lg={8}>

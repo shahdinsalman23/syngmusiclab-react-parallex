@@ -7,7 +7,7 @@ import { Parallax } from 'react-parallax';
 const NoticedExcellenceSection = () => {
   return (
 
-    <section className="noticed_excellence_sec">
+    <section className="noticed_excellence_sec" id="excellenceNoticed" style={{ width: "80%" }}>
       <Container>
         <Row>
           <Col lg={12}>

@@ -8,11 +8,14 @@
     "@testing-library/user-event": "^13.5.0",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.3",
+    "gsap": "^3.12.5",
+    "locomotive-scroll": "^4.1.4",
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.4",
     "react-dom": "^18.3.1",
     "react-faq-component": "^1.3.4",
     "react-icons": "^5.2.1",
+    "react-locomotive-scroll": "^0.2.2",
     "react-parallax": "^3.5.1",
     "react-scripts": "5.0.1",
     "react-typewriter-effect": "^1.1.0",
@@ -41,5 +44,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "source-map-loader": "^5.0.0"
   }
 }
